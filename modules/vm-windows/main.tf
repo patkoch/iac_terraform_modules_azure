@@ -5,7 +5,7 @@ resource "azurerm_availability_set" "myavailabilityset" {
 }
 
 resource "azurerm_public_ip" "my-public-ip" {
-  name                = "my-public-ip"
+  name                = var.public_ip_address_name
   resource_group_name = var.resource_group_name
   location            = var.location
   allocation_method   = "Dynamic"
@@ -16,7 +16,7 @@ resource "azurerm_public_ip" "my-public-ip" {
 }
 
 resource "azurerm_network_interface" "mynetworkinterface" {
-  name                = "my-network-interface"
+  name                = var.network_interface_name
   location            = var.location
   resource_group_name = var.resource_group_name
 
@@ -49,8 +49,8 @@ resource "azurerm_windows_virtual_machine" "myvirtualmachine" {
 
   source_image_reference {
     publisher = "MicrosoftWindowsDesktop"
-    offer     = "windows-11"
-    sku       = "win11-21h2-avd"
+    offer     = var.source_image_offer
+    sku       = var.source_image_sku
     version   = "latest"
   }
 }

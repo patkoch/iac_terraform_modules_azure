@@ -26,3 +26,19 @@ variable "resource_group_name" {
 variable "azurerm_subnet_id" {
   description   = "Id of the subnet"
 }
+
+variable "source_image_offer" {
+  description   = "Source image offer of the virtual machine"
+}
+
+variable "source_image_sku" {
+  description   = "Source image offer of the virtual machine"
+}
+
+variable "network_interface_name" {
+  description   = "Name of the network interface"
+}
+
+variable "public_ip_address_name" {
+  description   = "Name of the public ip address"
+}
